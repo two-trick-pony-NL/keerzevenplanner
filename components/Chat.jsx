@@ -59,7 +59,7 @@ const onSignOut = () => {
 
     return (
       <SafeAreaView style={{flex: 1, marginBottom: -35, outerHeight:'100%', backgroundColor:'white'}}>
-      <Text style={{textAlign: 'center', fontSize: '24', fontWeight: '600', paddingBottom: 5,}}> Chat met je huiswerkbegeleider</Text>
+      <Text style={{textAlign: 'center', fontsize: 24, fontWeight: '600', paddingBottom: 5,}}> Chat met je huiswerkbegeleider</Text>
       <GiftedChat
         style={{bottom: -20, position: 'absolute'}}
         messages={messages}

@@ -19,7 +19,7 @@ const DATA = [
 
 function Taskplanner({ navigation }) {
     return <SafeAreaView> 
-      <Text style={{textAlign: 'center', fontSize: '24', fontWeight: '600', paddingBottom: 5,}}> Jouw huiswerk</Text>
+      <Text style={{textAlign: 'center', fontsize: 24, fontWeight: '600', paddingBottom: 5,}}> Jouw huiswerk</Text>
       <List data={DATA} />
       </SafeAreaView>
 };

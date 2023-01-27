@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     },
     vak: {
       textAlign: 'left',
-      fontSize: '20',
+      fontsize: 20,
       fontWeight: '600',
       paddingBottom: 5,
     },

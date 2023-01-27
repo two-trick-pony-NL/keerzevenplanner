@@ -14,7 +14,7 @@ const signOutUser = () => {
 function Profile({ navigation }) {
     return <SafeAreaView style={styles.centered}>
         <View style={{flex:1, justifyContent: 'flex-end'}}>
-          <Text style={{textAlign: 'center', fontSize: '24', fontWeight: '600', paddingBottom: 5,}}> 🙋🏻‍♂️Profiel</Text>
+          <Text style={{textAlign: 'center', fontsize: 24, fontWeight: '600', paddingBottom: 5,}}> 🙋🏻‍♂️Profiel</Text>
           <Text style={styles.subtitle}>Je bent ingelogd als:</Text> 
           <Text> {Auth.currentUser.email}</Text>
           </View>

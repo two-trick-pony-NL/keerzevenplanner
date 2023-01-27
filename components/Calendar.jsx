@@ -43,7 +43,7 @@ const [task, setTask] = useState();
   });
   return (
     <SafeAreaView style={styles.agenda}>
-      <Text style={{textAlign: 'center', fontSize: '24', fontWeight: '600', paddingBottom: 5,}}> Ingeplanned huiswerk</Text>
+      <Text style={{textAlign: 'center', fontsize: 24, fontWeight: '600', paddingBottom: 5,}}> Ingeplanned huiswerk</Text>
       <Agenda 
       items={items} 
       renderItem={RenderTask} 
