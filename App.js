@@ -1,11 +1,11 @@
 import React, { useState, createContext, useContext, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { View, ActivityIndicator } from 'react-native';
 import { onAuthStateChanged } from 'firebase/auth';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Auth, database } from './config/firebase';
 import { Ionicons } from '@expo/vector-icons';
+
 
 // Get icons from: https://icons.expo.fyi
 
@@ -20,7 +20,6 @@ import Chat from "./components/Chat";
 
 //import { config } from "dotenv";
 
-const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const AuthenticatedUserContext = createContext({});
 
@@ -35,7 +34,7 @@ return (
 
 function ChatStack() {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator screenOptions={{ headerShown: true }}>
         <Tab.Screen 
         name="Planner" 
         component={Taskplanner} 
@@ -78,10 +77,25 @@ function ChatStack() {
 
 function AuthStack() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name='Login' component={Login} />
-      <Stack.Screen name='Signup' component={Signup} />
-    </Stack.Navigator>
+    <Tab.Navigator screenOptions={{ headerShown: true }}>
+      <Tab.Screen 
+        name='Login' 
+        component={Login}
+        options={{
+          tabBarLabel:"Log in",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="log-in" color={color} size={size} />
+          ),}}
+        />
+      <Tab.Screen 
+        name='Signup' 
+        component={Signup}
+        options={{
+          tabBarLabel:"Nieuw account",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person-add" color={color} size={size} />
+          ),}} />
+      </Tab.Navigator>
   );
 }
 
@@ -109,11 +123,13 @@ if (isLoading) {
     );
   }
 
-return (
-    <NavigationContainer>
-      {user ? <ChatStack /> : <AuthStack />}
-    </NavigationContainer>
-  );
+    return (
+     <View style={{ flex: 1}}>
+        <NavigationContainer>
+          {user ? <ChatStack /> : <AuthStack />}
+        </NavigationContainer>
+      </View>
+    );
 }
 
 

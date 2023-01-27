@@ -19,7 +19,8 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.petervandoorn.keerzevenplanner"
+      "bundleIdentifier": "com.petervandoorn.keerzevenplanner",
+      "buildNumber": "9"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,6 +30,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "72784ada-c2ac-4035-a59e-ecd67164d416"
+      }
     }
   }
 }

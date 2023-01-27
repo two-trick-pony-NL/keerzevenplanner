@@ -25,7 +25,7 @@ function Login({ navigation }) {
             placeholder='email address'
             keyboardType='email-address'
             textContentType='emailAddress'
-            autoFocus={true}
+            autoFocus={false}
             value={email}
             onChangeText={(text) => setEmail(text)}
           />

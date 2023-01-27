@@ -1,8 +1,10 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import React, { useState } from 'react';
+import React, { useReducer, useState } from 'react';
 import {Alert, Button, StyleSheet, Text, View, Image } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { Auth } from '../config/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+
 
 
 function Signup({ navigation }) {
